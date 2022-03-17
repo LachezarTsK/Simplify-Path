@@ -30,7 +30,7 @@ public class Solution {
         return simplifiedCanonicalPath.isEmpty() ? DIRECTORY_SEPARATOR : simplifiedCanonicalPath.toString();
     }
 
-    public void assembleSimplifiedCanonicalPath(StringBuilder simplifiedCanonicalPath, Deque<String> stackElements) {
+    private void assembleSimplifiedCanonicalPath(StringBuilder simplifiedCanonicalPath, Deque<String> stackElements) {
         while (!stackElements.isEmpty()) {
             simplifiedCanonicalPath.append(DIRECTORY_SEPARATOR);
             simplifiedCanonicalPath.append(stackElements.pollLast());
