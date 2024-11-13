@@ -13,7 +13,7 @@ class Solution {
 
 public:
 
-    string simplifyPath(string path) {
+    string simplifyPath(string path) const {
         vector<string> elements;
         splitStringIntoVector(elements, path);
         deque<string> stackElements;
@@ -38,7 +38,7 @@ public:
 
 private:
 
-    void splitStringIntoVector(vector<string>& elements, const string& path) {
+    void splitStringIntoVector(vector<string>& elements, const string& path) const {
         const char delimeter = DIRECTORY_SEPARATOR[0];
         stringstream s(path);
         string element;
@@ -47,7 +47,7 @@ private:
         }
     }
 
-    void assembleSimplifiedCanonicalPath(string& simplifiedCanonicalPath, deque<string>& stackElements) {
+    void assembleSimplifiedCanonicalPath(string& simplifiedCanonicalPath, deque<string>& stackElements) const {
         while (!stackElements.empty()) {
             simplifiedCanonicalPath.append(DIRECTORY_SEPARATOR);
             simplifiedCanonicalPath.append(stackElements.back());
